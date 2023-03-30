@@ -1,0 +1,13 @@
+--- #user passwd setting
+- name: Change user password
+  hosts: all
+  become: true
+
+  vars:
+    new_password: redhat@1234
+
+  tasks:
+    - name: Set user password
+      user:
+        name: amin
+        password: "{{ redhat@1234 }}"

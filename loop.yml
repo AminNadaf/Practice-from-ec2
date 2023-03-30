@@ -1,0 +1,17 @@
+--- #loop in ansible
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  
+  tasks:
+    - name: add a list of users
+      user: 
+          - name: "{{ item }}" 
+            state: present
+      with_items:
+          -  amin
+             nadaf
+             badesab
+             ashar
+            
